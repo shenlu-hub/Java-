@@ -1,7 +1,7 @@
 # Java-
 java第二次实验
-＃阅读程序
- ＃实验目的
+# 阅读程序
+ ## 实验目的
 1. 理解 Java 语言是如何体现面向对象编程基本思想的；
 
 2. 掌握类的声明以及对象的创建；
@@ -9,7 +9,7 @@ java第二次实验
 3. 了解类的成员变量和成员方法的特性以及类的构造方法的使用。
 
 4. 了解修饰符并能多元化的运用
-＃#实验过程
+## 实验过程
 用类描述计算机中CPU的速度和硬盘的容量，要求Java应用程序由4个类，名字分别是PC、CPU、HardDisk、和Test，其中Test是主类。
 
 PC类与CPU和HardDisk类关联的UML图
@@ -28,15 +28,17 @@ PC类与CPU和HardDisk类关联的UML图
 尝试把本次实验的多个类放置在不同的包中，体会修饰符private的用法。
 
 
-＃#核心方法
+## 核心方法
 
-主类
-`公共类测试{
-	公共静态void main（String [] args）
+**Test**
+`Test{
+	public void main（String [] args）
 		CPU cpu = new CPU();
 		HardDisk HD = new HardDisk();
 	    cpu.setSpeed(2200);
 		HD.setAmount(200);
+		cpu.setPrice(500);
+		HD.setSize(30);
 		PC pc = new PC();
 		pc.setCPU(cpu);
 		pc.setHardDisk(HD);
@@ -50,7 +52,7 @@ PC类与CPU和HardDisk类关联的UML图
 	
 
 }`
-CPU
+**CPU**
 `public class CPU {public class CPU {
 	private int speed;
 	public int price;
@@ -80,7 +82,7 @@ CPU
 	}
 }
 `
-PC
+**PC**
 `public class PC {
 	CPU cpu;
 	HardDisk HD;
@@ -93,13 +95,15 @@ PC
 	void show(){
 		System.out.println("cpu速度:"+cpu.getSpeed());
 		System.out.println("硬盘容量:"+HD.getAmount());
+		System.out.println("cpu价格:"+cpu.getPrice());
+		System.out.println("硬盘大小:"+HD.getSize());
 	
 }
 	PC(){
 		
 	}
 }`
-HardDisk
+**HardDisk**
 `public class HardDisk {public class HardDisk {
 	private int amout;
 	public int size;
@@ -132,10 +136,11 @@ HardDisk
 		
 	}
 }`
-##实验结果
+
+## 实验结果
 cpu速度:2200
 硬盘容量:200
 cpu价格:500
 硬盘大小:30
-＃#实验感想
+## 实验感想
 了解了如何定义对象调用对象，了解了private的用法，把实验的不同类放在多个包中还欠佳
