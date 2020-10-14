@@ -13,7 +13,10 @@ java第二次实验
 用类描述计算机中CPU的速度和硬盘的容量，要求Java应用程序由4个类，名字分别是PC、CPU、HardDisk、和Test，其中Test是主类。
 
 PC类与CPU和HardDisk类关联的UML图
-其中，CPU类要求getSpeed()返回speed的值，要求setSpeed(int m)方法将参数m的值赋值给speed；HardDisk类要求getAmount()返回amount的值，要求setAmount（int m）方法将参数m的值赋值给amount；PC类要求setCPU(CPU c)将参数c的值赋值给CPU，要求setHardDisk(HardDisk h)方法将参数h的值赋值给HD，要求show()方法能显示CPU的速度和硬盘的容量。
+其中，CPU类要求getSpeed()返回speed的值，要求setSpeed(int m)方法将参数m的值赋值给speed；
+HardDisk类要求getAmount()返回amount的值，要求setAmount（int m）方法将参数m的值赋值给amount；
+PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
+要求setHardDisk(HardDisk h)方法将参数h的值赋值给HD，要求show()方法能显示CPU的速度和硬盘的容量。
 主类Test的要求
 （1）main方法中创建一个CPU对象cpu，cpu将自己的speed设置为2200.
 （2）main方法中创建一个HardDisk对象disk，disk将自己的amount设置为200。
@@ -30,30 +33,29 @@ PC类与CPU和HardDisk类关联的UML图
 
 ## 核心方法
 
-**Test**
-`Test{
-	public void main（String [] args）
-		CPU cpu = new CPU();
-		HardDisk HD = new HardDisk();
-	    cpu.setSpeed(2200);
-		HD.setAmount(200);
+### Test
+`public class Test {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CPU cpu = new CPU();//创建一个CPU对象
+		HardDisk HD = new HardDisk();//创建一个HardDisk对象
+		cpu.setSpeed(2200);//将cpu的速度设置为2200
+		HD.setAmount(200);//将硬盘的容量设置为200
 		cpu.setPrice(500);
 		HD.setSize(30);
 		PC pc = new PC();
 		pc.setCPU(cpu);
 		pc.setHardDisk(HD);
 		pc.show();
-		
-	}
-	
-	Test(){
-		
-	}
-	
 
-}`
-**CPU**
-`public class CPU {public class CPU {
+	}
+
+}
+`
+### CPU
+`class CPU{
 	private int speed;
 	public int price;
 	int getSpeed(){
@@ -69,21 +71,10 @@ PC类与CPU和HardDisk类关联的UML图
 	public void setPrice(int price){
 		this.price = price;
 	}
-	CPU(){
-		
-	}
-}
-	}
-	public void setSpeed(int speed){
-		this.speed = speed;
-	}
-	CPU(){
-		
-	}
 }
 `
-**PC**
-`public class PC {
+### PC
+`class PC{
 	CPU cpu;
 	HardDisk HD;
 	void setCPU(CPU cpu){
@@ -92,19 +83,17 @@ PC类与CPU和HardDisk类关联的UML图
 	void setHardDisk(HardDisk HD){
 		this.HD = HD;
 	}
-	void show(){
-		System.out.println("cpu速度:"+cpu.getSpeed());
-		System.out.println("硬盘容量:"+HD.getAmount());
+	
+	void show() {
+		System.out.println("cpu速度："+cpu.getSpeed());
+		System.out.println("硬盘容量："+HD.getAmount());
 		System.out.println("cpu价格:"+cpu.getPrice());
 		System.out.println("硬盘大小:"+HD.getSize());
-	
-}
-	PC(){
 		
 	}
 }`
-**HardDisk**
-`public class HardDisk {public class HardDisk {
+### HardDisk
+`class HardDisk{
 	private int amout;
 	public int size;
 	int getAmount(){
@@ -122,19 +111,6 @@ PC类与CPU和HardDisk类关联的UML图
 		this.size = size;
 	}
 	
-	HardDisk(){
-		
-	}
-}
-	int getAmount(){
-		return amout;
-	}
-	public void setAmount(int amout){
-		this.amout = amout;
-	}
-	HardDisk(){
-		
-	}
 }`
 
 ## 实验结果
