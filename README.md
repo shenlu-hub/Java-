@@ -34,7 +34,8 @@ PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
 ## 核心方法
 
 ### Test
-`public class Test {
+```
+public class Test {
 	
 
 	public static void main(String[] args) {
@@ -53,9 +54,10 @@ PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
 	}
 
 }
-`
+```
 ### CPU
-`class CPU{
+```
+class CPU{
 	private int speed;
 	public int price;
 	int getSpeed(){
@@ -72,9 +74,10 @@ PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
 		this.price = price;
 	}
 }
-`
+```
 ### PC
-`class PC{
+```
+class PC{
 	CPU cpu;
 	HardDisk HD;
 	void setCPU(CPU cpu){
@@ -91,9 +94,11 @@ PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
 		System.out.println("硬盘大小:"+HD.getSize());
 		
 	}
-}`
+}
+```
 ### HardDisk
-`class HardDisk{
+```
+class HardDisk{
 	private int amout;
 	public int size;
 	int getAmount(){
@@ -111,7 +116,8 @@ PC类要求setCPU(CPU c)将参数c的值赋值给CPU，
 		this.size = size;
 	}
 	
-}`
+}
+```
 
 ## 实验结果
 cpu速度:2200
